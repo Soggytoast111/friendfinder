@@ -135,13 +135,36 @@
                   </select>
                   <br>
                   <br>
+                  
                   <button id="submitButton" type="button" class="btn btn-outline-danger">Submit!</button>
+
+
+                  <div class="modal" id="finalModal" tabindex="-1" role="dialog">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title">Your Dan-Friendly Match!</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body">
+                                    <h2 id="matchName"></h2>
+                                    <img id="matchImg" src="">
+                                    <h4>Your Dan-Score is: </h4>
+                                    <h4 id="danScore"></h4>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
        <script>
              function submitSurvey(){
-                  var surveyInfo = {
-                        name: $("#input-name").val(),
-                        photo: $("#input-photo").val(),
-                        survey: [
+                  
+                  var surveyPull = [
                         $("#q1").val(),
                         $("#q2").val(),
                         $("#q3").val(),
@@ -152,10 +175,23 @@
                         $("#q8").val(),
                         $("#q9").val(),
                         $("#q10").val()
-                        ]
+                  ]
+                  
+                  var surveyInfo = {
+                        name: $("#input-name").val(),
+                        photo: $("#input-photo").val(),
+                        survey: surveyPull
                   }
-                        
-                  $.post("/api/friends", surveyInfo, function(data){alert(data)})
+
+                  $.post("/api/friends", surveyInfo, function(data){
+                        var matchJSON = JSON.parse(data)
+                        console.log(matchJSON)
+                        $("#matchName").text(matchJSON.name)
+                        $("#matchImg").attr("src", matchJSON.photo)
+                        $("#danScore").text(matchJSON.score)
+                        $('#finalModal').modal()
+                  })
+                  
              }
              
              $("#submitButton").click(submitSurvey)

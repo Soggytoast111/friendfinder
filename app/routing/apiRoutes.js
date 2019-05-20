@@ -1,16 +1,22 @@
 var friendData = require("../data/friends")
 
 module.exports = function(app) {
-    app.get("/api/friends", function(req, res) {
-      res.json(friendData)
+      app.get("/api/friends", function(req, res) {
+      res.json(friendData.object)
       console.log("he hit the friends api!")
     })
 
     app.post("/api/friends", function(req, res) {
-      friendData.push(req.body)
-      res.json("okay!")
-      console.log(friendData)
-      console.log("here is the req")
-      console.log(req)
+      friendData.object.push(req.body)
+      var currentUser = req.body
+      console.log(friendData.object)
+      friendData.friendFunction()
+      var matchObj = {
+          name: friendData.object[friendData.friendMatch].name,
+          photo: friendData.object[friendData.friendMatch].photo,
+          score: friendData.score
+      }
+      console.log(JSON.stringify(matchObj))
+      res.json(JSON.stringify(matchObj))
     })
 }
