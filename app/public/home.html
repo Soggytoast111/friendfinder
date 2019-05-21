@@ -12,19 +12,25 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div class="card" style="width: 18rem;">
-            <img src="./images/dan2.png" class="card-img-top" alt="dan2">
+        <div id="bodyWrapper" class="row" style="max-width: 600px">
+            <div id="marginL" class="col-2"></div>
+            <div id="main" class="col-8">
+        
+        <div class="card">
+            <img src="https://raw.githubusercontent.com/Soggytoast111/friendfinder/master/app/public/images/dan.png" class="card-img-top" alt="dan2">
             <div class="card-body">
               <h5 class="card-title">Ultra Dan Finder!</h5>
               <p class="card-text">The best place to find a Dan-Friendly Match!</p>
               </div>
-
-              
-
-          </div>
-          
-          <button type="button" class="btn btn-outline-danger">Enter!</button>
-
-       
+              <button type="button" id="clickme" class="btn btn-outline-danger">Enter!</button>
+        </div>
+            </div>
+        <div id="marginR" class="col-2"></div>
+        </div>
     </body>
+    <script>
+    $("#clickme").click(function(){
+        location.href='./quiz'  
+    })    
+    </script>
 </html>

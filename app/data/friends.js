@@ -2,21 +2,87 @@
 var friendObjArray = {
     object: 
 [{
-    "name":"Ahmed",
-    "photo":"https://vignette.wikia.nocookie.net/streetfighter/images/f/ff/Abigailrender.png",
+    "name":"Walt Whitman",
+    "photo":"https://www.randomlists.com/img/people/walt_whitman.jpg",
     "survey":[
         5,
         1,
         4,
+        2,
         4,
-        5,
         1,
         2,
+        2,
+        4,
+        3
+      ]
+  },
+  {
+    "name":"Jennifer Love Hewitt",
+    "photo":"https://www.randomlists.com/img/people/jennifer_love_hewitt.jpg",
+    "survey":[
+        3,
+        1,
+        2,
+        1,
+        4,
         5,
+        5,
+        2,
+        1,
+        1
+      ]
+  },
+  {
+    "name":"Roger Federer",
+    "photo":"https://www.randomlists.com/img/people/roger_federer.jpg",
+    "survey":[
+        2,
+        1,
+        4,
+        1,
+        2,
+        4,
+        2,
+        5,
+        1,
+        3
+      ]
+  },
+  {
+    "name":"Mark Wahlberg",
+    "photo":"https://www.randomlists.com/img/people/mark_wahlberg.jpg",
+    "survey":[
+        2,
+        3,
+        1,
+        5,
+        4,
+        5,
+        3,
+        2,
         4,
         1
       ]
-  }],
+  },
+  {
+    "name":"Reese Witherspoon",
+    "photo":"https://www.randomlists.com/img/people/reese_witherspoon.jpg",
+    "survey":[
+        2,
+        4,
+        1,
+        2,
+        2,
+        5,
+        3,
+        3,
+        5,
+        5
+      ]
+  },
+
+],
     friendFunction: function(){
         var friendScores = []
         
@@ -30,8 +96,8 @@ var friendObjArray = {
         console.log("Your Friendscores is:")
         console.log(friendScores)
         var friendMatch = 0
-        for (i=1; i<friendScores.length; i++){
-            if (friendscores[i]> friendScores[friendMatch]){
+        for (i=0; i<friendScores.length; i++){
+            if (friendScores[i]> friendScores[friendMatch]){
                 friendMatch = i
             }
         }
