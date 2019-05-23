@@ -122,7 +122,18 @@ var friendObjArray = {
             "Response D - 4-5" 
         ]
 
-
+        if (this.score < 2){
+            return textBoxBucket[0]
+        }
+        else if(this.score < 3){
+            return textBoxBucket[1]
+        }
+        else if(this.score < 4){
+            return textBoxBucket[2]
+        }
+        else {
+            return textBoxBucket[3]
+        }
     }
 }
 

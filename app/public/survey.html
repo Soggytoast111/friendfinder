@@ -156,6 +156,7 @@
                                     <img id="matchImg" src="">
                                     <h4>Your Dan-Score is: </h4>
                                     <h4 id="danScore"></h4>
+                                    <h4 id="danText"></h4>
                                   </div>
                                   <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -194,9 +195,9 @@
                         $("#matchName").text(matchJSON.name)
                         $("#matchImg").attr("src", matchJSON.photo)
                         $("#danScore").text(matchJSON.score)
+                        $("#danText").text(matchJSON.text)
                         $('#finalModal').modal()
                   })
-                  
              }
              
              $("#submitButton").click(submitSurvey)

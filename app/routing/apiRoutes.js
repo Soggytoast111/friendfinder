@@ -8,13 +8,13 @@ module.exports = function(app) {
 
     app.post("/api/friends", function(req, res) {
       friendData.object.push(req.body)
-      var currentUser = req.body
       console.log(friendData.object)
       friendData.friendFunction()
       var matchObj = {
           name: friendData.object[friendData.friendMatch].name,
           photo: friendData.object[friendData.friendMatch].photo,
-          score: friendData.score
+          score: friendData.score,
+          text: friendData.displayText()
       }
       console.log(JSON.stringify(matchObj))
       res.json(JSON.stringify(matchObj))
