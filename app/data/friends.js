@@ -109,11 +109,21 @@ var friendObjArray = {
             scoreValue += parseInt(this.object[this.object.length - 1].survey[i])
         }
         
-        this.score = 5-((50-scoreValue)/10)
+        this.score = scoreValue/10
         console.log("here is your score:  " + this.score) 
     },
     friendMatch: 0,
-    score: 0
+    score: 0,
+    displayText:  function(){
+        var textBoxBucket = [
+            "Response A - 1-1.99",
+            "Response B - 2-2.99",
+            "Response C - 3-3.99",
+            "Response D - 4-5" 
+        ]
+
+
+    }
 }
 
   module.exports = friendObjArray
