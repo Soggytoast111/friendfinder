@@ -116,10 +116,10 @@ var friendObjArray = {
     score: 0,
     displayText:  function(){
         var textBoxBucket = [
-            "Response A - 1-1.99",
-            "Response B - 2-2.99",
-            "Response C - 3-3.99",
-            "Response D - 4-5" 
+            "Puh - Why so up-tight?",
+            "Basic like bread and butter.",
+            "You got potential kid...",
+            "Wow, is this Dan himself?" 
         ]
 
         if (this.score < 2){
